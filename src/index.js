@@ -27,6 +27,8 @@ export const Navbar = () => (
 
                 <main>
                     <Routes>
+                        <Route path="/ppireact/" element={<News />}>
+                        </Route>
                         <Route path="/about" element={<About />}>
                         </Route>
                         <Route path="/news" element={<News />}>
