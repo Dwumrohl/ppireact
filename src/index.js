@@ -27,13 +27,15 @@ export const Navbar = () => (
 
                 <main>
                     <Routes>
-                        <Route path="/ppireact/" element={<News />}>
+                        <Route path="/ppireact/:" element={<News />}>
                         </Route>
                         <Route path="/about" element={<About />}>
                         </Route>
                         <Route path="/news" element={<News />}>
                         </Route>
                         <Route path="/news/:id" element={<New />}>
+                        </Route>
+                        <Route path="/:" element={<News />}>
                         </Route>
                         <Route path="/" element={<News />}>
                         </Route>
