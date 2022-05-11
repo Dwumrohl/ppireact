@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ppireact/static/css/main.f61efeff.css",
-    "main.js": "/ppireact/static/js/main.c98b0822.js",
+    "main.js": "/ppireact/static/js/main.2daa8a73.js",
     "static/js/787.ff22ffef.chunk.js": "/ppireact/static/js/787.ff22ffef.chunk.js",
     "static/media/logo.svg": "/ppireact/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ppireact/index.html",
     "main.f61efeff.css.map": "/ppireact/static/css/main.f61efeff.css.map",
-    "main.c98b0822.js.map": "/ppireact/static/js/main.c98b0822.js.map",
+    "main.2daa8a73.js.map": "/ppireact/static/js/main.2daa8a73.js.map",
     "787.ff22ffef.chunk.js.map": "/ppireact/static/js/787.ff22ffef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f61efeff.css",
-    "static/js/main.c98b0822.js"
+    "static/js/main.2daa8a73.js"
   ]
 }
