@@ -10,7 +10,7 @@ import {faAddressCard} from "@fortawesome/free-solid-svg-icons";
 import {
     BrowserRouter as Router,
     Route,
-    Link, Routes, useParams,
+    Link, Routes, useParams, Redirect,
 } from 'react-router-dom';
 
 
@@ -27,7 +27,8 @@ export const Navbar = () => (
 
                 <main>
                     <Routes>
-                        <Route path="/ppireact/:" element={<News />}>
+                        <Route path="/ppireact/">
+                            <Redirect to="/news"/>
                         </Route>
                         <Route path="/about" element={<About />}>
                         </Route>
@@ -35,9 +36,8 @@ export const Navbar = () => (
                         </Route>
                         <Route path="/news/:id" element={<New />}>
                         </Route>
-                        <Route path="/:" element={<News />}>
-                        </Route>
-                        <Route path="/" element={<News />}>
+                        <Route path="/">
+                            <Redirect to="/news"/>
                         </Route>
                         <Route path="/bookmarks" element={<Bookmarks />}>
                         </Route>
