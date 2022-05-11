@@ -16,7 +16,7 @@ import {
 
 
 export const Navbar = () => (
-            <Router>
+            <Router basename="/ppireact">
                 <header className="mainMenu">
                     <nav>
                                 <Link className="menuLink" to="/news"><FontAwesomeIcon icon={faNewspaper}/> Новости</Link>
