@@ -35,12 +35,9 @@ export const Navbar = () => (
                         </Route>
                         <Route path="/" element={<News />}>
                         </Route>
-                        <Route path="/ppireact/" element={<News />}>
-                        </Route>
-
                         <Route path="/bookmarks" element={<Bookmarks />}>
                         </Route>
-                        <Route path="*" exact={true} element={<PageNotFound/>}/>
+                        <Route path="/*" element={<PageNotFound/>}/>
 
                     </Routes>
                 </main>
