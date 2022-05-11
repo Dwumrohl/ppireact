@@ -37,7 +37,7 @@ export const Navbar = () => (
                         </Route>
                         <Route path="/bookmarks" element={<Bookmarks />}>
                         </Route>
-                        <Route path="/*" element={<PageNotFound/>}/>
+                        <Route path="*" exact={true} element={<PageNotFound/>}/>
 
                     </Routes>
                 </main>
