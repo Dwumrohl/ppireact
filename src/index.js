@@ -10,13 +10,13 @@ import {faAddressCard} from "@fortawesome/free-solid-svg-icons";
 import {
     BrowserRouter as Router,
     Route,
-    Link, Routes, useParams, Navigate,
+    Link, Routes, useParams, Navigate, HashRouter,
 } from 'react-router-dom';
 
 
 
 export const Navbar = () => (
-            <Router basename="/ppireact">
+            <HashRouter >
                 <header className="mainMenu">
                     <nav>
                                 <Link className="menuLink" to="/news"><FontAwesomeIcon icon={faNewspaper}/> Новости</Link>
@@ -27,7 +27,7 @@ export const Navbar = () => (
 
                 <main>
                     <Routes>
-                        <Route path="*" element={<Navigate to={"/"}/>}>
+                        <Route path="*" element={<PageNotFound />}>
                         </Route>
                         <Route exact path="/ppireact" element={<News />}>
                         </Route>
@@ -45,7 +45,7 @@ export const Navbar = () => (
                         </Route>
                     </Routes>
                 </main>
-            </Router>
+            </HashRouter>
 )
 
     function About() {
