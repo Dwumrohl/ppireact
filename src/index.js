@@ -16,7 +16,7 @@ import {
 
 
 export const Navbar = () => (
-            <HashRouter >
+            <HashRouter>
                 <header className="mainMenu">
                     <nav>
                                 <Link className="menuLink" to="/news"><FontAwesomeIcon icon={faNewspaper}/> Новости</Link>
@@ -48,7 +48,7 @@ export const Navbar = () => (
             </HashRouter>
 )
 
-    function About() {
+    export function About() {
         return(
             <div className="about">
                 <ul id="listAbout">
@@ -60,7 +60,7 @@ export const Navbar = () => (
 
         );
     }
-    function PageNotFound(){
+    export function PageNotFound(){
     return(
         <div>
             <h1>404</h1>
@@ -70,7 +70,7 @@ export const Navbar = () => (
     }
 
 
-function News() {
+export function News() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -236,7 +236,7 @@ function News() {
 }
 
 
-function New() {
+export function New() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [item, setItems] = useState(null);
@@ -356,7 +356,7 @@ function New() {
     }
 }
 
-function Bookmarks(){
+export function Bookmarks(){
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
