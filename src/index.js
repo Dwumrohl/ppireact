@@ -192,8 +192,8 @@ export function News() {
                 <div>
                     <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:desc")}><FontAwesomeIcon icon={faScroll}/>  Сначала новые</button>
                     <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:asc")}><FontAwesomeIcon icon={faScroll}/>   Сначала старые</button>
-                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по заголовку: <input id='inputTitle' type="text" /><button onClick={()=>handleOnClickText("title_contains="+document.getElementById('inputTitle').value)}>Поиск</button></p>
-                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по содержанию: <input id='inputSumm' type="text" /><button onClick={()=>handleOnClickText("summary_contains="+document.getElementById('inputSumm').value)}>Поиск</button></p>
+                    <p className="searchSmth"> Поиск по заголовку: <input id='inputTitle' type="text" /><button className="sortBtnText" onClick={()=>handleOnClickText("title_contains="+document.getElementById('inputTitle').value)}><FontAwesomeIcon icon={faSearch}/> Поиск</button></p>
+                    <p className="searchSmth">Поиск по содержанию: <input id='inputSumm' type="text" /><button className="sortBtnText" onClick={()=>handleOnClickText("summary_contains="+document.getElementById('inputSumm').value)}><FontAwesomeIcon icon={faSearch}/> Поиск</button></p>
                 </div>
                 {
                     pageCount>1 ?

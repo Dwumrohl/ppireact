@@ -89,6 +89,13 @@ code {
   padding: 5px;
 }
 
+.sortBtnText {
+  margin-left: 1%;
+  background-color: rgba(53, 170, 222, 0.2);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 7px;
+}
+
 .searchSmth {
   margin-left: 2.5%;
 }
