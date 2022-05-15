@@ -182,7 +182,6 @@ export function News() {
         getPageArray(pageCount);
     }
 
-
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
@@ -193,20 +192,20 @@ export function News() {
                 <div>
                     <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:desc")}><FontAwesomeIcon icon={faScroll}/>  Сначала новые</button>
                     <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:asc")}><FontAwesomeIcon icon={faScroll}/>   Сначала старые</button>
-                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по заголовку: <input type="text" onChange={(e)=>handleOnClickText("title_contains="+e.target.value)}/></p>
-                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по содержанию: <input type="text" onChange={(e)=>handleOnClickText("summary_contains="+e.target.value)}/></p>
+                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по заголовку: <input id='inputTitle' type="text" /><button onClick={()=>handleOnClickText("title_contains="+document.getElementById('inputTitle').value)}>Поиск</button></p>
+                    <p className="searchSmth"><FontAwesomeIcon icon={faSearch}/> Поиск по содержанию: <input id='inputSumm' type="text" /><button onClick={()=>handleOnClickText("summary_contains="+document.getElementById('inputSumm').value)}>Поиск</button></p>
                 </div>
-                <div className="pageBar">
-                    <button className="pageBarBtnFs" onClick={()=>handlePageClick(1)}>1</button>
-                    {pageArray.map(page => (
-                        <button className="pageBarBtn" onClick={()=>handlePageClick(page)}>{page.toString()}</button>
-                    ))}
-                    {
-                        pageCount!==1 ?
-                            <button className="pageBarBtnFs" onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
+                {
+                    pageCount>1 ?
+                        <div className="pageBar">
+                            <button className={pageNumber === 1 ? 'pageBarBtnFsCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(1)}>1</button>
+                            {pageArray.map(page => (
+                                <button className={pageNumber === page ? 'pageBarBtnCurrent' : 'pageBarBtn'} onClick={()=>handlePageClick(page)}>{page.toString()}</button>
+                            ))}
+                            <button className={pageNumber === pageCount ? 'pageBarBtnCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
+                        </div>
                             : ""
                     }
-                </div>
                 <hr className="hrSplit"/>
             <ul className="newsList">
                 {items.map(item => (
@@ -219,17 +218,17 @@ export function News() {
                 ))}
             </ul>
                 <hr className="hrSplit"/>
-                <div className="pageBar">
-                    <button className="pageBarBtnFs" onClick={()=>handlePageClick(1)}>1</button>
-                    {pageArray.map(page => (
-                        <button className="pageBarBtn" onClick={()=>handlePageClick(page)}>{page.toString()}</button>
-                    ))}
-                    {
-                        pageCount!==1 ?
-                            <button className="pageBarBtnFs" onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
-                            : ""
-                    }
-                </div>
+                {
+                    pageCount>1 ?
+                        <div className="pageBar">
+                            <button className={pageNumber === 1 ? 'pageBarBtnFsCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(1)}>1</button>
+                            {pageArray.map(page => (
+                                <button className={pageNumber === page ? 'pageBarBtnCurrent' : 'pageBarBtn'} onClick={()=>handlePageClick(page)}>{page.toString()}</button>
+                            ))}
+                            <button className={pageNumber === pageCount ? 'pageBarBtnCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
+                        </div>
+                        : ""
+                }
             </div>
         );
     }
@@ -453,17 +452,13 @@ export function Bookmarks(){
                     <span className="myBookmarks">Мои закладки:</span>
                     <hr className="hrSplit"/>
                     {
-                        items.length!==0 ?
+                        items.length!==0 && pageCount>1 ?
                             <div className="pageBar">
-                                <button className="pageBarBtnFs" onClick={()=>handlePageClick(1)}>1</button>
+                                <button className={pageNumber === 1 ? 'pageBarBtnFsCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(1)}>1</button>
                                 {pageArray.map(page => (
-                                    <button className="pageBarBtn" onClick={()=>handlePageClick(page)}>{page.toString()}</button>
+                                    <button className={pageNumber === page ? 'pageBarBtnCurrent' : 'pageBarBtn'} onClick={()=>handlePageClick(page)}>{page.toString()}</button>
                                 ))}
-                                {
-                                    pageCount!==1 ?
-                                        <button className="pageBarBtnFs" onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
-                                        : ""
-                                }
+                                <button className={pageNumber === pageCount ? 'pageBarBtnFsCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
                             </div>
                             : ""
                     }
@@ -482,17 +477,13 @@ export function Bookmarks(){
                     </ul>
                     <hr className="hrSplit"/>
                     {
-                        items.length!==0 ?
+                        items.length!==0 && pageCount>1 ?
                             <div className="pageBar">
-                                <button className="pageBarBtnFs" onClick={()=>handlePageClick(1)}>1</button>
+                                <button className={pageNumber === 1 ? 'pageBarBtnFsCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(1)}>1</button>
                                 {pageArray.map(page => (
-                                    <button className="pageBarBtn" onClick={()=>handlePageClick(page)}>{page.toString()}</button>
+                                    <button className={pageNumber === page ? 'pageBarBtnCurrent' : 'pageBarBtn'} onClick={()=>handlePageClick(page)}>{page.toString()}</button>
                                 ))}
-                                {
-                                    pageCount!==1 ?
-                                        <button className="pageBarBtnFs" onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
-                                        : ""
-                                }
+                                <button className={pageNumber === pageCount ? 'pageBarBtnCurrent' : 'pageBarBtnFs'} onClick={()=>handlePageClick(pageCount)}>{pageCount}</button>
                             </div>
                             : ""
                     }
